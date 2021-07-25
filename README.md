@@ -9,7 +9,7 @@ got to https://nodejs.org/en/download/ and follow instructions there to install 
 
 ### Installing and running mysql 
 #### Windows
-To install on windows you download Xampp from this link and follow the installation
+To install on Windows you download Xampp from this link and follow the installation
 
 * [Xampp](https://www.apachefriends.org/xampp-files/8.0.8/xampp-windows-x64-8.0.8-1-VS16-installer.exe)
 
@@ -34,7 +34,7 @@ Please to follow this guide to install it.
 
 #### Launch mysql prompt
 
-On windows :
+On Windows :
 
 ```  c:\xampp\mysql\bin\mysql.exe  --user=root --password="" ```
 
@@ -101,7 +101,7 @@ For each request with limit and offset parameters, these parameters are optional
 
 ### 1 : all list 
 This request fetch all entries in the table etablissement. 
-Pagination is available with (limit/offset paramters).
+Pagination is available with (limit/offset parameters).
 ``` 
 query {
   getEtablissements(limit : int, offset:int)

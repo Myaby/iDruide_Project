@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { ApplicationModule } from './app.module';
-var cors = require('cors');
+let cors = require('cors');
 
 async function bootstrap() {
   const app = await NestFactory.create(ApplicationModule);
