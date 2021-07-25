@@ -66,7 +66,7 @@ then
 
 ``` exit ```
 
-### If you already have a mysql server 
+### Only if your configuration of mysql is not the default one  
 
 you can on the next file configure the application with you own parameters:
 
@@ -121,7 +121,7 @@ query {
 The search is on the "Code_postal" column
 This request fetch the entry .
 The result is an array of etablissements.
-Pagination is available with (limit/offset paramters).
+Pagination is available with (limit/offset parameters).
 ``` 
 query {
   getEtablissementsByPostalCode(postal_code : string, limit : int, offset:int)
@@ -132,7 +132,7 @@ query {
 The search is on the "Type_etablissement" column
 This request fetch the entry .
 The result is an array of etablissements.
-Pagination is available with (limit/offset paramters).
+Pagination is available with (limit/offset parameters).
 ``` 
 query {
   getEtablissementsByTypeSchool(typeschool : string, limit : int, offset:int)
@@ -142,9 +142,9 @@ query {
 ### 5 : find all by Administrative Division
 
 The search is on the "code_bassin_formation" column or "libelle_bassin_formation" column
-All entry wich contain the pattern "administrative_division : string" are accepted
+All entry which contain the pattern "administrative_division : string" are accepted
 The result is an array of etablissements.
-Pagination is available with (limit/offset paramters).
+Pagination is available with (limit/offset parameters).
 ``` 
 query {
   getEtablissementsByAdministrativeDivision(administrative_division : string, limit : int, offset:int)
@@ -152,7 +152,7 @@ query {
 ``` 
 
 ### 6 : find the nearest from gps coordinates
-The search will calcul the nearest entry between latitude/longitude parameters and latitude/longitude columns in database
+The search will calculate the nearest entry between latitude/longitude parameters and latitude/longitude columns in database
 The result is maximum one etablissement
 No pagination on this request.
 ``` 
