@@ -1,6 +1,6 @@
 # Project iDruide Test
 
-Node/Nestjs etablissement CRUD application with graphql Mysql Apollo Sequelize implementation
+Node/Nestjs etablissement CRUD application with graphql, Mysql, Apollo and Sequelize implementation.
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ got to https://nodejs.org/en/download/ and follow instructions there to install 
 
 ### Installing and running mysql 
 #### Windows
-To install on Windows you download Xampp from this link and follow the installation
+To install on Windows you should download Xampp from this link and follow the installation
 
 * [Xampp](https://www.apachefriends.org/xampp-files/8.0.8/xampp-windows-x64-8.0.8-1-VS16-installer.exe)
 
@@ -95,7 +95,7 @@ you can on the next file configure the application with you own parameters:
 
 navigate to browser http://localhost:3000/graphiql
 
-## request available
+## requests available
 
 For each request with limit and offset parameters, these parameters are optionals
 
