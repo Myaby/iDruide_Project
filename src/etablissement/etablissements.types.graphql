@@ -1,5 +1,5 @@
 type Query {
-    getEtablissements: [Etablissement],
+    getEtablissements( limit : Int, offset : Int): [Etablissement],
     getEtablissementsByIdentifiant(identifiant : String): Etablissement,
     getEtablissementsByPostalCode(postal_code : String, limit : Int, offset : Int): [Etablissement],
     getEtablissementsByTypeSchool(typeschool : String, limit : Int, offset : Int): [Etablissement]

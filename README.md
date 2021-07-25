@@ -1,6 +1,6 @@
 # Project iDruide Test
 
-nestjs etablissement CRUD application with graphql Mysql Apollo Sequelize implementation
+Node/Nestjs etablissement CRUD application with graphql Mysql Apollo Sequelize implementation
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ On linux :
 
 ```  mysql -u root ```
 
-```     with -p if you put a password ```
+with -p if you put a password 
 
  ```    mysql -u root -p password ```
 
@@ -62,11 +62,32 @@ Info : etablissement.sql location's is in the repository in "iDruide_Project/scr
 
 ``` etablissements < source absolut_path/iDruide Project/script_sql/etablissement.sql ```
 
+then
+
+``` exit ```
+
+### If you already have a mysql server 
+
+you can on the next file configure the application with you own parameters:
+
+./src/database/database.provider.ts
+
+```
+ const sequelize = new Sequelize({
+        dialect: 'mysql',
+        host: 'localhost',
+        port: 3306,
+        username: 'root',
+        password: '',
+        database: 'etablissements',
+ });
+```
+
 ### Installing and running server app
 
-``` git clone https://github.com/gmasnestjs-mysql-graphql-sequelize-typescript.git```
+``` git clone https://github.com/Myaby/iDruide_Project.git```
 
-``` cd nestjs-mysql-graphql-sequelize-typescript```
+``` cd iDruide_Project ```
 
 ``` npm install```
 
@@ -74,56 +95,73 @@ Info : etablissement.sql location's is in the repository in "iDruide_Project/scr
 
 navigate to browser http://localhost:3000/graphiql
 
-### request available
+## request available
 
-#### 1 : all list 
-This request pull all the database. 
+For each request with limit and offset parameters, these parameters are optionals
+
+### 1 : all list 
+This request fetch all entries in the table etablissement. 
+Pagination is available with (limit/offset paramters).
 ``` 
 query {
-  getEtablissements{
-  }
+  getEtablissements(limit : int, offset:int)
 }
 ``` 
-#### 2 : find one by identifiant
-This request fetch the entry .
+### 2 : find one by identifiant
+This request fetch the entry with the strictly same indentifiant.
+The search is on the "Identifiant_de_l_etablissement" column
+The result is maximum one etablissement 
+No pagination on this request.
 ``` 
 query {
   getEtablissementsByIdentifiant(identifiant : string)
 }
 ``` 
-#### 3 : find all by Postal_code
+### 3 : find all by Postal_code
+The search is on the "Code_postal" column
 This request fetch the entry .
+The result is an array of etablissements.
+Pagination is available with (limit/offset paramters).
 ``` 
 query {
   getEtablissementsByPostalCode(postal_code : string, limit : int, offset:int)
 }
 ``` 
 
-#### 4 : find all by type of school
+### 4 : find all by type of school
+The search is on the "Type_etablissement" column
 This request fetch the entry .
+The result is an array of etablissements.
+Pagination is available with (limit/offset paramters).
 ``` 
 query {
   getEtablissementsByTypeSchool(typeschool : string, limit : int, offset:int)
 }
 ``` 
 
-#### 5 : find all by Administrative Division
-This request fetch the entry .
+### 5 : find all by Administrative Division
+
+The search is on the "code_bassin_formation" column or "libelle_bassin_formation" column
+All entry wich contain the pattern "administrative_division : string" are accepted
+The result is an array of etablissements.
+Pagination is available with (limit/offset paramters).
 ``` 
 query {
   getEtablissementsByAdministrativeDivision(administrative_division : string, limit : int, offset:int)
 }
 ``` 
 
-#### 5 : find the nearest from gps coordinates
-This request fetch the entry .
+### 6 : find the nearest from gps coordinates
+The search will calcul the nearest entry between latitude/longitude parameters and latitude/longitude columns in database
+The result is maximum one etablissement
+No pagination on this request.
 ``` 
 query {
-  getEtablissementsByAdministrativeDivision(latitude: Floatlongitude: Float)
+  getEtablissementsByAdministrativeDivision(latitude: Float,longitude: Float)
 }
 ``` 
 
-#### response example for request 5 : find the nearest from gps coordinates
+#### response example for request 6 : find the nearest from gps coordinates
 ``` 
 query{
   getEtablissementsByGeoloc(latitude :41.3864931217, longitude :9.15696039508)
@@ -213,7 +251,7 @@ query{
 * [Nestjs](https://nestjs.com/)
 * [Sequelize](https://sequelize.org/)
 * [Graphql](https://graphql.org/)
-
+* [AppoloGraphql](https://www.apollographql.com/docs/)
 
 
 
@@ -225,9 +263,5 @@ query{
 ## License
 
 free
-
-## Acknowledgments
-
-* Nestjs Fraternity for building and maintaining this great framework read more at https://docs.nestjs.com/
 
 

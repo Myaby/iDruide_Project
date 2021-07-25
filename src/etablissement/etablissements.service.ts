@@ -10,9 +10,11 @@ export class EtablissementsServices {
         @Inject('EtablissementsRepository') private readonly etablissementsRepository: typeof Etablissement
     ) {}
 
-    async findAll(): Promise<Etablissement[]> {
-        console.log(Etablissement)
-        return await this.etablissementsRepository.findAll<Etablissement>();
+    async findAll(limit : number , offset : number): Promise<Etablissement[]> {
+        return await this.etablissementsRepository.findAll<Etablissement>({
+            limit : limit,
+            offset : offset
+        });
     }
 
     async findAllByIdentifiant(identifiant : string): Promise<Etablissement> {
@@ -23,7 +25,7 @@ export class EtablissementsServices {
         });
     }
 
-    async findAllByPostalCode(postal_code : string ,offset  ,limit): Promise<Etablissement[]> {
+    async findAllByPostalCode(postal_code : string ,offset : number  ,limit : number ): Promise<Etablissement[]> {
         return await this.etablissementsRepository.findAll<Etablissement>({
             limit : limit,
             offset : offset,
@@ -33,7 +35,7 @@ export class EtablissementsServices {
         });
     }
 
-    async findAllByTypeSchool(typeschool : string ,offset  ,limit): Promise<Etablissement[]> {
+    async findAllByTypeSchool(typeschool : string ,offset  : number ,limit : number ): Promise<Etablissement[]> {
         return await this.etablissementsRepository.findAll<Etablissement>({
             limit : limit,
             offset : offset,
@@ -43,7 +45,7 @@ export class EtablissementsServices {
         });
     }
 
-    async findAllByAdministrativeDivision(administrative_division : string ,offset  ,limit): Promise<Etablissement[]> {
+    async findAllByAdministrativeDivision(administrative_division : string ,offset  : number ,limit : number ): Promise<Etablissement[]> {
         return await this.etablissementsRepository.findAll<Etablissement>({
             limit : limit,
             offset : offset,
@@ -57,7 +59,7 @@ export class EtablissementsServices {
         });
     }
 
-    async findOneByGeoloc(latitude , longitude  ): Promise<Etablissement> {
+    async findOneByGeoloc(latitude : number , longitude : number  ): Promise<Etablissement> {
 
         let radlat1 = "PI() * "+latitude +"/180";
         let radlat2 = "PI() * latitude /180";
