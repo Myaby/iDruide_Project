@@ -59,8 +59,8 @@ On the mysql prompt execute the following line :
 #### Executed script to deploy the dump
 
 Info : etablissement.sql location's is in the repository in "iDruide_Project/script_sql/etablissement.sql"
-
-``` etablissements < source absolut_path/iDruide Project/script_sql/etablissement.sql ```
+Info : switch %absolut_path% by you own path
+``` etablissements < source %absolut_path%/iDruide Project/script_sql/etablissement.sql ```
 
 then
 
