@@ -11,7 +11,7 @@ got to https://nodejs.org/en/download/ and follow instructions there to install 
 #### Windows
 To install on Windows you should download Xampp from this link and follow the installation
 
-* [Xampp](https://www.apachefriends.org/xampp-files/8.0.8/xampp-windows-x64-8.0.8-1-VS16-installer.exe)
+* [Xampp](https://www.apachefriends.org/fr/index.html)
 
 When it's done.
     
