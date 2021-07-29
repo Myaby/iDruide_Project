@@ -251,7 +251,7 @@ query{
 * [Nestjs](https://nestjs.com/)
 * [Sequelize](https://sequelize.org/)
 * [Graphql](https://graphql.org/)
-* [AppoloGraphql](https://www.apollographql.com/docs/)
+* [ApolloGraphql](https://www.apollographql.com/docs/)
 
 
 
